@@ -5,6 +5,6 @@ pdf2image==1.17.0
 tokenizers==0.20.3
 transformers==4.46.3
 vidore-benchmark==4.0.2
-mteb
-datasets
-tenacity
+mteb==1.29.11
+datasets==2.20.0
+tenacity==9.0.0
