@@ -1,0 +1,10 @@
+colpali-engine==0.3.6
+gputil==1.4.0
+loguru==0.7.3
+pdf2image==1.17.0
+tokenizers==0.20.3
+transformers==4.46.3
+vidore-benchmark==4.0.2
+mteb
+datasets
+tenacity
