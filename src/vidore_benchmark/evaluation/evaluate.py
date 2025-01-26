@@ -11,7 +11,46 @@ from vidore_benchmark.compression.token_pooling import BaseEmbeddingPooler
 from vidore_benchmark.retrievers.bm25_retriever import BM25Retriever
 from vidore_benchmark.retrievers.vision_retriever import VisionRetriever
 from vidore_benchmark.utils.iter_utils import batched
+from vidore_benchmark.models.run_qw_7B import QwenVLModel
+from vidore_benchmark.models.run_openai import OpenAIImageRanker
 
+def get_relevant_docs_results(doc_results, ds, k=8):
+    """
+    Rerank top k results using vision language model
+    Args:
+        doc_results: Original retrieval results
+        ds: Dataset containing images
+        vision_retriever: Vision retriever instance with VLM
+        k: Number of top results to rerank
+    """
+    # Initialize QwenVL model
+    # rerank_model = QwenVLModel()
+    rerank_model = OpenAIImageRanker()
+
+    reranked_results = {}
+    
+    for query_id, doc_scores in doc_results.items():
+        # Get top k doc_ids and scores
+        top_k_items = sorted(doc_scores.items(), key=lambda x: x[1], reverse=True)[:k]
+        
+        # Get corresponding images - using original doc_ids without parsing
+        images = [ds[idx]["image"] for idx, _ in enumerate(top_k_items)]
+        query = query_id  # Assuming query_id is the actual query text
+        
+        # Rerank using VLM
+        rerank_scores = rerank_model.rerank_with_vlm(query, images)
+        
+        print("==rerank_scores==", rerank_scores)
+        import pdb; pdb.set_trace()
+
+        # Create new results dict with reranked scores, keeping original doc_ids
+        reranked_doc_scores = {
+            doc_id: float(score)  
+            for (doc_id, _), score in zip(top_k_items, rerank_scores)
+        }
+        reranked_results[query_id] = reranked_doc_scores
+    
+    return reranked_results
 
 def evaluate_dataset(
     vision_retriever: VisionRetriever,
@@ -20,6 +59,7 @@ def evaluate_dataset(
     batch_passage: int,
     batch_score: Optional[int] = None,
     embedding_pooler: Optional[BaseEmbeddingPooler] = None,
+    rerank=True,
 ) -> Dict[str, Optional[float]]:
     """
     Evaluate the model on a given dataset using the MTEB metrics.
@@ -97,7 +137,14 @@ def evaluate_dataset(
     # Get the relevant passages and results
     relevant_docs, results = vision_retriever.get_relevant_docs_results(ds, queries, scores)
 
-    # Compute the MTEB metrics
-    metrics = vision_retriever.compute_metrics(relevant_docs, results)
+    if rerank:
+        rerank_results = get_relevant_docs_results(results, ds)
+        metrics = vision_retriever.compute_metrics(relevant_docs, rerank_results)
+        metric_origin = vision_retriever.compute_metrics(relevant_docs, results)
+        
+        print(f"===1\n{metrics}")
+        print(f"===2\n{metric_origin}")
+    else:
+        metrics = vision_retriever.compute_metrics(relevant_docs, results)
 
     return metrics
