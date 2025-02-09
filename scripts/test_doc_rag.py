@@ -41,7 +41,8 @@ def main(args):
     # if args.document_input == "text":
     #     print("args.document_input is {}, filter the other chunk type".format(args.document_input))
     dataset = dataset.filter(lambda x: x['chunk_type'] == 'text')
-    
+    # check the average number of words  of text in the dataset
+    print("average number of words in the dataset", sum([len(x['text_description'].split()) for x in dataset])/len(dataset))
     # Process dataset in groups of 10
     start_idx = 0
     end_idx = int(len(dataset)*size)
@@ -91,17 +92,16 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Vidore Benchmark Evaluation Script")
     parser.add_argument("--dataset", type=str,
                         default = "vidore/syntheticDocQA_artificial_intelligence_test_ocr_chunk",help="Name of the dataset to load")
-    parser.add_argument("--model", type=str,
-                        default="jina-clip-v1" ,choices=["jina-clip", "ColPali", "BiQwen2","SigLIP"], help="Name of the model to use")
+    parser.add_argument("--model", type=str, default = "ColPali", 
+                        choices=["jina-clip", "ColPali", "BiQwen2","SigLIP"], help="Name of the model to use")
     parser.add_argument("--rerank", action=argparse.BooleanOptionalAction,  help="Whether to rerank the results")
 
     parser.add_argument("--document_input", type=str, default="image", choices=["image", "text","image+text"],
                         help="Input type for the document")
-
-    parser.add_argument("--only_text", action=argparse.BooleanOptionalAction, default=False, help="Whether to use only text")
-    
+   
     parser.add_argument("--size", type=int, default=1, help="Size of the dataset")
     args = parser.parse_args()
+
+    print(f"Running evaluation with args: {args}")
     
-    print("args.only_text",args.only_text)
     main(args)
