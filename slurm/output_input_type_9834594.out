@@ -1,125 +1,0 @@
-============================================================================================== 
-Warning! Mixing Conda and module environments may lead to corruption of the
-user environment. 
-We do not recommend users mixing those two environments unless absolutely
-necessary. Note that 
-SURF does not provide any support for Conda environment.
-For more information, please refer to our software policy page:
-https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
-
-Remember that many packages have already been installed on the system and can
-be loaded using 
-the 'module load <package__name>' command. If you are uncertain if a package is
-already available 
-on the system, please use 'module avail' or 'module spider' to search for it.
-============================================================================================== 
-/var/spool/slurm/slurmd/job9834594/slurm_script: line 15: cd: ../../projects/0/prjs0996/vidore-benchmark: No such file or directory
-args.only_text False
-
-Processing group 0-714
-Forwarding query batches:   0%|          | 0/45 [00:00<?, ?it/s]Forwarding query batches:   2%|▏         | 1/45 [00:00<00:05,  8.31it/s]Forwarding query batches:  16%|█▌        | 7/45 [00:00<00:01, 33.90it/s]Forwarding query batches:  27%|██▋       | 12/45 [00:00<00:00, 40.18it/s]Forwarding query batches:  38%|███▊      | 17/45 [00:00<00:00, 43.38it/s]Forwarding query batches:  49%|████▉     | 22/45 [00:00<00:00, 45.22it/s]Forwarding query batches:  60%|██████    | 27/45 [00:00<00:00, 46.37it/s]Forwarding query batches:  71%|███████   | 32/45 [00:00<00:00, 47.09it/s]Forwarding query batches:  82%|████████▏ | 37/45 [00:00<00:00, 47.59it/s]Forwarding query batches:  93%|█████████▎| 42/45 [00:00<00:00, 47.90it/s]                                                                         Dataloader pre-batching:   0%|          | 0/8 [00:00<?, ?it/s]
-Forwarding passage batches:   0%|          | 0/10 [00:00<?, ?it/s][A
-Forwarding passage batches:  10%|█         | 1/10 [00:00<00:06,  1.43it/s][A
-Forwarding passage batches:  20%|██        | 2/10 [00:01<00:04,  1.84it/s][A
-Forwarding passage batches:  30%|███       | 3/10 [00:01<00:03,  1.99it/s][A
-Forwarding passage batches:  40%|████      | 4/10 [00:02<00:02,  2.11it/s][A
-Forwarding passage batches:  50%|█████     | 5/10 [00:02<00:02,  1.94it/s][A
-Forwarding passage batches:  60%|██████    | 6/10 [00:03<00:01,  2.04it/s][A
-Forwarding passage batches:  70%|███████   | 7/10 [00:03<00:01,  2.11it/s][A
-Forwarding passage batches:  80%|████████  | 8/10 [00:03<00:00,  2.16it/s][A
-Forwarding passage batches:  90%|█████████ | 9/10 [00:04<00:00,  2.20it/s][A
-Forwarding passage batches: 100%|██████████| 10/10 [00:05<00:00,  1.52it/s][A
-                                                                           [ADataloader pre-batching:  12%|█▎        | 1/8 [00:08<01:00,  8.59s/it]
-Forwarding passage batches:   0%|          | 0/10 [00:00<?, ?it/s][A
-Forwarding passage batches:  10%|█         | 1/10 [00:00<00:03,  2.37it/s][A
-Forwarding passage batches:  20%|██        | 2/10 [00:00<00:03,  2.50it/s][A
-Forwarding passage batches:  30%|███       | 3/10 [00:01<00:02,  2.38it/s][A
-Forwarding passage batches:  40%|████      | 4/10 [00:01<00:02,  2.27it/s][A
-Forwarding passage batches:  50%|█████     | 5/10 [00:02<00:02,  2.26it/s][A
-Forwarding passage batches:  60%|██████    | 6/10 [00:02<00:01,  2.25it/s][A
-Forwarding passage batches:  70%|███████   | 7/10 [00:03<00:02,  1.47it/s][A
-Forwarding passage batches:  80%|████████  | 8/10 [00:04<00:01,  1.66it/s][A
-Forwarding passage batches:  90%|█████████ | 9/10 [00:04<00:00,  1.91it/s][A
-Forwarding passage batches: 100%|██████████| 10/10 [00:04<00:00,  2.03it/s][A
-                                                                           [ADataloader pre-batching:  25%|██▌       | 2/8 [00:15<00:47,  7.86s/it]
-Forwarding passage batches:   0%|          | 0/10 [00:00<?, ?it/s][A
-Forwarding passage batches:  10%|█         | 1/10 [00:00<00:03,  2.29it/s][A
-Forwarding passage batches:  20%|██        | 2/10 [00:00<00:03,  2.33it/s][A
-Forwarding passage batches:  30%|███       | 3/10 [00:01<00:02,  2.42it/s][A
-Forwarding passage batches:  40%|████      | 4/10 [00:02<00:03,  1.76it/s][A
-Forwarding passage batches:  50%|█████     | 5/10 [00:03<00:03,  1.34it/s][A
-Forwarding passage batches:  60%|██████    | 6/10 [00:03<00:02,  1.57it/s][A
-Forwarding passage batches:  70%|███████   | 7/10 [00:04<00:01,  1.70it/s][A
-Forwarding passage batches:  80%|████████  | 8/10 [00:04<00:01,  1.87it/s][A
-Forwarding passage batches:  90%|█████████ | 9/10 [00:04<00:00,  2.01it/s][A
-Forwarding passage batches: 100%|██████████| 10/10 [00:05<00:00,  2.11it/s][A
-                                                                           [ADataloader pre-batching:  38%|███▊      | 3/8 [00:24<00:39,  7.97s/it]
-Forwarding passage batches:   0%|          | 0/10 [00:00<?, ?it/s][A
-Forwarding passage batches:  10%|█         | 1/10 [00:00<00:03,  2.70it/s][A
-Forwarding passage batches:  20%|██        | 2/10 [00:00<00:03,  2.52it/s][A
-Forwarding passage batches:  30%|███       | 3/10 [00:01<00:02,  2.69it/s][A
-Forwarding passage batches:  40%|████      | 4/10 [00:01<00:02,  2.70it/s][A
-Forwarding passage batches:  50%|█████     | 5/10 [00:01<00:01,  2.52it/s][A
-Forwarding passage batches:  60%|██████    | 6/10 [00:02<00:01,  2.45it/s][A
-Forwarding passage batches:  70%|███████   | 7/10 [00:02<00:01,  2.48it/s][A
-Forwarding passage batches:  80%|████████  | 8/10 [00:03<00:00,  2.40it/s][A
-Forwarding passage batches:  90%|█████████ | 9/10 [00:03<00:00,  2.39it/s][A
-Forwarding passage batches: 100%|██████████| 10/10 [00:04<00:00,  2.36it/s][A
-                                                                           [ADataloader pre-batching:  50%|█████     | 4/8 [00:30<00:29,  7.31s/it]
-Forwarding passage batches:   0%|          | 0/10 [00:00<?, ?it/s][A
-Forwarding passage batches:  10%|█         | 1/10 [00:00<00:03,  2.32it/s][A
-Forwarding passage batches:  20%|██        | 2/10 [00:00<00:03,  2.39it/s][A
-Forwarding passage batches:  30%|███       | 3/10 [00:01<00:02,  2.52it/s][A
-Forwarding passage batches:  40%|████      | 4/10 [00:01<00:02,  2.46it/s][A
-Forwarding passage batches:  50%|█████     | 5/10 [00:02<00:02,  2.38it/s][A
-Forwarding passage batches:  60%|██████    | 6/10 [00:02<00:01,  2.38it/s][A
-Forwarding passage batches:  70%|███████   | 7/10 [00:02<00:01,  2.39it/s][A
-Forwarding passage batches:  80%|████████  | 8/10 [00:03<00:00,  2.46it/s][A
-Forwarding passage batches:  90%|█████████ | 9/10 [00:03<00:00,  2.40it/s][A
-Forwarding passage batches: 100%|██████████| 10/10 [00:04<00:00,  2.35it/s][A
-                                                                           [ADataloader pre-batching:  62%|██████▎   | 5/8 [00:37<00:21,  7.15s/it]
-Forwarding passage batches:   0%|          | 0/10 [00:00<?, ?it/s][A
-Forwarding passage batches:  10%|█         | 1/10 [00:00<00:03,  2.32it/s][A
-Forwarding passage batches:  20%|██        | 2/10 [00:00<00:03,  2.42it/s][A
-Forwarding passage batches:  30%|███       | 3/10 [00:01<00:03,  2.32it/s][A
-Forwarding passage batches:  40%|████      | 4/10 [00:01<00:02,  2.30it/s][A
-Forwarding passage batches:  50%|█████     | 5/10 [00:02<00:02,  2.41it/s][A
-Forwarding passage batches:  60%|██████    | 6/10 [00:04<00:04,  1.09s/it][A
-Forwarding passage batches:  70%|███████   | 7/10 [00:04<00:02,  1.16it/s][A
-Forwarding passage batches:  80%|████████  | 8/10 [00:05<00:01,  1.38it/s][A
-Forwarding passage batches:  90%|█████████ | 9/10 [00:05<00:00,  1.60it/s][A
-Forwarding passage batches: 100%|██████████| 10/10 [00:06<00:00,  1.75it/s][A
-                                                                           [ADataloader pre-batching:  75%|███████▌  | 6/8 [00:46<00:16,  8.03s/it]
-Forwarding passage batches:   0%|          | 0/10 [00:00<?, ?it/s][A
-Forwarding passage batches:  10%|█         | 1/10 [00:00<00:06,  1.31it/s][A
-Forwarding passage batches:  20%|██        | 2/10 [00:01<00:04,  1.79it/s][A
-Forwarding passage batches:  30%|███       | 3/10 [00:01<00:02,  2.34it/s][A
-Forwarding passage batches:  40%|████      | 4/10 [00:01<00:02,  2.64it/s][A
-Forwarding passage batches:  50%|█████     | 5/10 [00:02<00:02,  2.37it/s][A
-Forwarding passage batches:  60%|██████    | 6/10 [00:02<00:01,  2.46it/s][A
-Forwarding passage batches:  70%|███████   | 7/10 [00:03<00:01,  2.37it/s][A
-Forwarding passage batches:  80%|████████  | 8/10 [00:03<00:00,  2.39it/s][A
-Forwarding passage batches:  90%|█████████ | 9/10 [00:03<00:00,  2.37it/s][A
-Forwarding passage batches: 100%|██████████| 10/10 [00:04<00:00,  2.49it/s][A
-                                                                           [ADataloader pre-batching:  88%|████████▊ | 7/8 [00:54<00:07,  7.77s/it]
-Forwarding passage batches:   0%|          | 0/2 [00:00<?, ?it/s][A
-Forwarding passage batches:  50%|█████     | 1/2 [00:00<00:00,  3.01it/s][A
-Forwarding passage batches: 100%|██████████| 2/2 [00:00<00:00,  4.31it/s][A
-                                                                         [ADataloader pre-batching: 100%|██████████| 8/8 [00:54<00:00,  5.53s/it]Dataloader pre-batching: 100%|██████████| 8/8 [00:54<00:00,  6.87s/it]
-Group metrics: {'ndcg_at_1': 0.217, 'ndcg_at_3': 0.28372, 'ndcg_at_5': 0.30596, 'ndcg_at_10': 0.33074, 'ndcg_at_20': 0.35196, 'ndcg_at_50': 0.37354, 'ndcg_at_100': 0.39029, 'map_at_1': 0.217, 'map_at_3': 0.26734, 'map_at_5': 0.27975, 'map_at_10': 0.29009, 'map_at_20': 0.29578, 'map_at_50': 0.29918, 'map_at_100': 0.30067, 'recall_at_1': 0.217, 'recall_at_3': 0.3311, 'recall_at_5': 0.38479, 'recall_at_10': 0.46085, 'recall_at_20': 0.54586, 'recall_at_50': 0.65548, 'recall_at_100': 0.75839, 'precision_at_1': 0.217, 'precision_at_3': 0.11037, 'precision_at_5': 0.07696, 'precision_at_10': 0.04609, 'precision_at_20': 0.02729, 'precision_at_50': 0.01311, 'precision_at_100': 0.00758, 'mrr_at_1': 0.21700223713646533, 'mrr_at_3': 0.26733780760626386, 'mrr_at_5': 0.27975391498881425, 'mrr_at_10': 0.29009445687298036, 'mrr_at_20': 0.2957832663681251, 'mrr_at_50': 0.2991783464589681, 'mrr_at_100': 0.3006653486890785, 'naucs_at_1_max': 0.14821460355186236, 'naucs_at_1_std': 0.046456279396133296, 'naucs_at_1_diff1': 0.48727856565810135, 'naucs_at_3_max': 0.20487821316265428, 'naucs_at_3_std': 0.14201851193185527, 'naucs_at_3_diff1': 0.4218345537244614, 'naucs_at_5_max': 0.1963760151294321, 'naucs_at_5_std': 0.16755695394070821, 'naucs_at_5_diff1': 0.37758649328076344, 'naucs_at_10_max': 0.14219820445978887, 'naucs_at_10_std': 0.1409840738783189, 'naucs_at_10_diff1': 0.33895999515174097, 'naucs_at_20_max': 0.07669728384336168, 'naucs_at_20_std': 0.11605654561215797, 'naucs_at_20_diff1': 0.2990843048528579, 'naucs_at_50_max': 0.07274900051376786, 'naucs_at_50_std': 0.20861840565362885, 'naucs_at_50_diff1': 0.3643614924178177, 'naucs_at_100_max': 0.08189261792272462, 'naucs_at_100_std': 0.2573995148196495, 'naucs_at_100_diff1': 0.3453855049808702}
-args: Namespace(dataset='vidore/docvqa_test_subsampled_ocr_chunk', model='SigLIP', rerank=None, document_input='image', only_text=False, size=1)
-Results saved to eval_res/colpali_eval_docvq_SigLIP_image_20250209_122608.json
-
-JOB STATISTICS
-==============
-Job ID: 9834594
-Cluster: snellius
-User/Group: wangsh/wangsh
-State: COMPLETED (exit code 0)
-Nodes: 1
-Cores per node: 16
-CPU Utilized: 00:01:10
-CPU Efficiency: 4.70% of 00:24:48 core-walltime
-Job Wall-clock time: 00:01:33
-Memory Utilized: 2.32 GB
-Memory Efficiency: 3.87% of 60.00 GB

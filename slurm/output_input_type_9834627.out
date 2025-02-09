@@ -1,94 +1,0 @@
-============================================================================================== 
-Warning! Mixing Conda and module environments may lead to corruption of the
-user environment. 
-We do not recommend users mixing those two environments unless absolutely
-necessary. Note that 
-SURF does not provide any support for Conda environment.
-For more information, please refer to our software policy page:
-https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
-
-Remember that many packages have already been installed on the system and can
-be loaded using 
-the 'module load <package__name>' command. If you are uncertain if a package is
-already available 
-on the system, please use 'module avail' or 'module spider' to search for it.
-============================================================================================== 
-/var/spool/slurm/slurmd/job9834627/slurm_script: line 15: cd: ../../projects/0/prjs0996/vidore-benchmark: No such file or directory
-`config.hidden_act` is ignored, you should use `config.hidden_activation` instead.
-Gemma's activation function will be set to `gelu_pytorch_tanh`. Please, use
-`config.hidden_activation` if you want to override this behaviour.
-See https://github.com/huggingface/transformers/pull/29402 for more details.
-args.only_text False
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:02<00:02,  2.83s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.45s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.66s/it]
-
-Processing group 0-414
-Forward pass queries...:   0%|          | 0/26 [00:00<?, ?it/s]Forward pass queries...:   4%|▍         | 1/26 [00:00<00:06,  4.16it/s]Forward pass queries...:  19%|█▉        | 5/26 [00:00<00:01, 16.02it/s]Forward pass queries...:  35%|███▍      | 9/26 [00:00<00:00, 22.17it/s]Forward pass queries...:  50%|█████     | 13/26 [00:00<00:00, 25.49it/s]Forward pass queries...:  65%|██████▌   | 17/26 [00:00<00:00, 27.79it/s]Forward pass queries...:  81%|████████  | 21/26 [00:00<00:00, 29.18it/s]Forward pass queries...:  96%|█████████▌| 25/26 [00:00<00:00, 30.19it/s]                                                                        Dataloader pre-batching:   0%|          | 0/5 [00:00<?, ?it/s]
-Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
-Forward pass documents...:  10%|█         | 1/10 [00:00<00:04,  1.83it/s][A
-Forward pass documents...:  20%|██        | 2/10 [00:00<00:03,  2.19it/s][A
-Forward pass documents...:  30%|███       | 3/10 [00:01<00:03,  2.31it/s][A
-Forward pass documents...:  40%|████      | 4/10 [00:01<00:02,  2.48it/s][A
-Forward pass documents...:  50%|█████     | 5/10 [00:02<00:02,  2.34it/s][A
-Forward pass documents...:  60%|██████    | 6/10 [00:02<00:01,  2.39it/s][A
-Forward pass documents...:  70%|███████   | 7/10 [00:03<00:01,  2.27it/s][A
-Forward pass documents...:  80%|████████  | 8/10 [00:03<00:00,  2.40it/s][A
-Forward pass documents...:  90%|█████████ | 9/10 [00:03<00:00,  2.50it/s][A
-Forward pass documents...: 100%|██████████| 10/10 [00:04<00:00,  2.59it/s][A
-                                                                          [ADataloader pre-batching:  20%|██        | 1/5 [00:05<00:22,  5.53s/it]
-Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
-Forward pass documents...:  10%|█         | 1/10 [00:00<00:03,  2.55it/s][A
-Forward pass documents...:  20%|██        | 2/10 [00:00<00:02,  2.70it/s][A
-Forward pass documents...:  30%|███       | 3/10 [00:01<00:02,  2.62it/s][A
-Forward pass documents...:  40%|████      | 4/10 [00:01<00:02,  2.59it/s][A
-Forward pass documents...:  50%|█████     | 5/10 [00:01<00:01,  2.65it/s][A
-Forward pass documents...:  60%|██████    | 6/10 [00:02<00:01,  2.65it/s][A
-Forward pass documents...:  70%|███████   | 7/10 [00:02<00:01,  2.70it/s][A
-Forward pass documents...:  80%|████████  | 8/10 [00:02<00:00,  2.82it/s][A
-Forward pass documents...:  90%|█████████ | 9/10 [00:03<00:00,  2.73it/s][A
-Forward pass documents...: 100%|██████████| 10/10 [00:03<00:00,  2.62it/s][A
-                                                                          [ADataloader pre-batching:  40%|████      | 2/5 [00:10<00:15,  5.24s/it]
-Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
-Forward pass documents...:  10%|█         | 1/10 [00:00<00:03,  2.71it/s][A
-Forward pass documents...:  20%|██        | 2/10 [00:00<00:02,  2.90it/s][A
-Forward pass documents...:  30%|███       | 3/10 [00:01<00:02,  2.88it/s][A
-Forward pass documents...:  40%|████      | 4/10 [00:01<00:02,  2.89it/s][A
-Forward pass documents...:  50%|█████     | 5/10 [00:01<00:01,  2.79it/s][A
-Forward pass documents...:  60%|██████    | 6/10 [00:02<00:01,  2.89it/s][A
-Forward pass documents...:  70%|███████   | 7/10 [00:02<00:01,  2.89it/s][A
-Forward pass documents...:  80%|████████  | 8/10 [00:02<00:00,  2.81it/s][A
-Forward pass documents...:  90%|█████████ | 9/10 [00:03<00:00,  2.72it/s][A
-Forward pass documents...: 100%|██████████| 10/10 [00:03<00:00,  2.63it/s][A
-                                                                          [ADataloader pre-batching:  60%|██████    | 3/5 [00:15<00:09,  4.98s/it]
-Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
-Forward pass documents...:  10%|█         | 1/10 [00:00<00:02,  3.26it/s][A
-Forward pass documents...:  20%|██        | 2/10 [00:00<00:02,  2.89it/s][A
-Forward pass documents...:  30%|███       | 3/10 [00:01<00:02,  2.78it/s][A
-Forward pass documents...:  40%|████      | 4/10 [00:01<00:02,  2.82it/s][A
-Forward pass documents...:  50%|█████     | 5/10 [00:01<00:01,  2.77it/s][A
-Forward pass documents...:  60%|██████    | 6/10 [00:02<00:01,  2.73it/s][A
-Forward pass documents...:  70%|███████   | 7/10 [00:02<00:01,  2.61it/s][A
-Forward pass documents...:  80%|████████  | 8/10 [00:02<00:00,  2.57it/s][A
-Forward pass documents...:  90%|█████████ | 9/10 [00:03<00:00,  2.55it/s][A
-Forward pass documents...: 100%|██████████| 10/10 [00:03<00:00,  2.60it/s][A
-                                                                          [ADataloader pre-batching:  80%|████████  | 4/5 [00:20<00:04,  4.96s/it]
-Forward pass documents...:   0%|          | 0/2 [00:00<?, ?it/s][A
-Forward pass documents...:  50%|█████     | 1/2 [00:00<00:00,  2.95it/s][A
-Forward pass documents...: 100%|██████████| 2/2 [00:00<00:00,  4.39it/s][A
-                                                                        [ADataloader pre-batching: 100%|██████████| 5/5 [00:20<00:00,  3.39s/it]Dataloader pre-batching: 100%|██████████| 5/5 [00:20<00:00,  4.16s/it]
-Group metrics: {'ndcg_at_1': 0.83267, 'ndcg_at_3': 0.87877, 'ndcg_at_5': 0.89215, 'ndcg_at_10': 0.89728, 'ndcg_at_20': 0.90327, 'ndcg_at_50': 0.90674, 'ndcg_at_100': 0.90674, 'map_at_1': 0.83267, 'map_at_3': 0.8672, 'map_at_5': 0.87477, 'map_at_10': 0.87687, 'map_at_20': 0.87848, 'map_at_50': 0.87918, 'map_at_100': 0.87918, 'recall_at_1': 0.83267, 'recall_at_3': 0.91235, 'recall_at_5': 0.94422, 'recall_at_10': 0.96016, 'recall_at_20': 0.98406, 'recall_at_50': 1.0, 'recall_at_100': 1.0, 'precision_at_1': 0.83267, 'precision_at_3': 0.30412, 'precision_at_5': 0.18884, 'precision_at_10': 0.09602, 'precision_at_20': 0.0492, 'precision_at_50': 0.02, 'precision_at_100': 0.01, 'mrr_at_1': 0.8286852589641435, 'mrr_at_3': 0.8678618857901726, 'mrr_at_5': 0.8742363877822045, 'mrr_at_10': 0.8756750774679061, 'mrr_at_20': 0.8773036282000425, 'mrr_at_50': 0.8779784115839891, 'mrr_at_100': 0.8779784115839891, 'naucs_at_1_max': 0.7142532887379929, 'naucs_at_1_std': 0.43926817061882856, 'naucs_at_1_diff1': 0.853763554266585, 'naucs_at_3_max': 0.7209546154966187, 'naucs_at_3_std': 0.5828105258384304, 'naucs_at_3_diff1': 0.7609955353160207, 'naucs_at_5_max': 0.6364392601850726, 'naucs_at_5_std': 0.5255796931569882, 'naucs_at_5_diff1': 0.7145518274754746, 'naucs_at_10_max': 0.7329907005225316, 'naucs_at_10_std': 0.7419229803001096, 'naucs_at_10_diff1': 0.7004227164354595, 'naucs_at_20_max': 0.7807128321412536, 'naucs_at_20_std': 0.8886614102479911, 'naucs_at_20_diff1': 0.5757926516796906, 'naucs_at_50_max': nan, 'naucs_at_50_std': nan, 'naucs_at_50_diff1': nan, 'naucs_at_100_max': nan, 'naucs_at_100_std': nan, 'naucs_at_100_diff1': nan}
-args: Namespace(dataset='vidore/tabfquad_test_subsampled_ocr_chunk', model='ColPali', rerank=None, document_input='image', only_text=False, size=1)
-Results saved to eval_res/colpali_eval_tabfq_ColPali_image_20250209_122556.json
-
-JOB STATISTICS
-==============
-Job ID: 9834627
-Cluster: snellius
-User/Group: wangsh/wangsh
-State: COMPLETED (exit code 0)
-Nodes: 1
-Cores per node: 16
-CPU Utilized: 00:01:16
-CPU Efficiency: 7.66% of 00:16:32 core-walltime
-Job Wall-clock time: 00:01:02
-Memory Utilized: 1.90 GB
-Memory Efficiency: 3.17% of 60.00 GB
