@@ -25,12 +25,12 @@ class SigLIPRetriever(VisionRetriever):
     ):
         super().__init__()
 
-        try:
-            import proto  # noqa: F401
-        except ImportError:
-            raise ImportError(
-                'Install the missing dependencies with `pip install "vidore-benchmark[siglip]"` to use SigLIPRetriever.'
-            )
+        # try:
+        #     import proto  # noqa: F401
+        # except ImportError:
+        #     raise ImportError(
+        #         'Install the missing dependencies with `pip install "vidore-benchmark[siglip]"` to use SigLIPRetriever.'
+        #     )
 
         self.pretrained_model_name_or_path = pretrained_model_name_or_path
         self.device = get_torch_device(device)
@@ -55,8 +55,9 @@ class SigLIPRetriever(VisionRetriever):
             inputs_queries = self.processor(
                 text=query_batch, return_tensors="pt", padding="max_length", truncation=True
             ).to(self.device)
-            query_embeddings = self.model.get_text_features(**inputs_queries)
-            list_emb_queries.extend(list(torch.unbind(query_embeddings, dim=0)))
+            with torch.no_grad():
+                query_embeddings = self.model.get_text_features(**inputs_queries)
+                list_emb_queries.extend(list(torch.unbind(query_embeddings, dim=0)))
 
         return list_emb_queries
 
@@ -72,7 +73,8 @@ class SigLIPRetriever(VisionRetriever):
             passage_batch = cast(List[Image.Image], passage_batch)
             list_doc = [document.convert("RGB") for document in passage_batch if isinstance(document, Image.Image)]
 
-            input_image_processed = self.processor(images=list_doc, return_tensors="pt", padding=True).to(self.device)
+            input_image_processed = self.processor(images=list_doc, return_tensors="pt", 
+                                                   padding=True).to(self.device)
 
             with torch.no_grad():
                 passage_embeddings = self.model.get_image_features(**input_image_processed)

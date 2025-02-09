@@ -10,6 +10,10 @@ from tqdm import tqdm
 from vidore_benchmark.compression.token_pooling import BaseEmbeddingPooler
 from vidore_benchmark.retrievers.bm25_retriever import BM25Retriever
 from vidore_benchmark.retrievers.vision_retriever import VisionRetriever
+from vidore_benchmark.retrievers.jina_clip_retriever import JinaClipRetriever
+from vidore_benchmark.retrievers.colpali_retriever import ColPaliRetriever
+from vidore_benchmark.retrievers.siglip_retriever import SigLIPRetriever
+
 from vidore_benchmark.utils.iter_utils import batched
 from vidore_benchmark.models.run_qw_7B import QwenVLModel
 from vidore_benchmark.models.run_openai import OpenAIImageRanker
@@ -41,7 +45,7 @@ def get_relevant_docs_results(doc_results, ds, k=8):
         rerank_scores = rerank_model.rerank_with_vlm(query, images)
         
         print("==rerank_scores==", rerank_scores)
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
 
         # Create new results dict with reranked scores, keeping original doc_ids
         reranked_doc_scores = {
@@ -52,6 +56,27 @@ def get_relevant_docs_results(doc_results, ds, k=8):
     
     return reranked_results
 
+
+def fuse_passage_tensors(tensors1, tensors2, fuse_method):
+    # Ensure both lists have the same length
+    assert len(tensors1) == len(tensors1), "Tensor lists must have the same length"
+    
+    # import pdb; pdb.set_trace()
+    fused_tensors = []
+    for tensor1, tensor2 in zip(tensors1, tensors2):
+
+        if fuse_method == "average":
+            fused_tensor = (tensor1 + tensor2) / 2
+        elif fuse_method == 'concat':
+            fused_tensor = torch.cat([tensor1, tensor2], dim=0)
+        elif fuse_method == 'Multiplication':
+            fused_tensor = tensor1 * tensor2
+            fused_tensor = fused_tensor / fused_tensor.norm(dim=-1, keepdim=True)
+
+        fused_tensors.append(fused_tensor)
+    
+    return fused_tensors
+
 def evaluate_dataset(
     vision_retriever: VisionRetriever,
     ds: Dataset,
@@ -59,7 +84,8 @@ def evaluate_dataset(
     batch_passage: int,
     batch_score: Optional[int] = None,
     embedding_pooler: Optional[BaseEmbeddingPooler] = None,
-    rerank=True,
+    rerank = True,
+    document_input = str,
 ) -> Dict[str, Optional[float]]:
     """
     Evaluate the model on a given dataset using the MTEB metrics.
@@ -71,7 +97,7 @@ def evaluate_dataset(
     - text_description: the text description (i.e. the page caption or the text chunks) if
         `use_visual_embedding` is False
     """
-
+    # import pdb; pdb.set_trace()
     # Dataset: sanity check
     passage_column_name = "image" if vision_retriever.use_visual_embedding else "text_description"
     required_columns = ["query", passage_column_name, "image_filename"]
@@ -97,13 +123,13 @@ def evaluate_dataset(
     # Edge case: using the BM25Retriever
     if isinstance(vision_retriever, BM25Retriever):
         passages = ds[passage_column_name]
-        scores = vision_retriever.get_scores_bm25(queries=queries, passages=passages)
+        scores = vision_retriever.get_scores_bm25(queries = queries, passages = passages)
         relevant_docs, results = vision_retriever.get_relevant_docs_results(ds, queries, scores)
         metrics = vision_retriever.compute_metrics(relevant_docs, results)
         return metrics
 
     # Get the embeddings for the queries and passages
-    emb_queries = vision_retriever.forward_queries(queries, batch_size=batch_query)
+    emb_queries = vision_retriever.forward_queries(queries, batch_size = batch_query)
 
     # NOTE: To prevent overloading the RAM for large datasets, we will load the passages (images)
     # that will be fed to the model in batches (this should be fine for queries as their memory footprint
@@ -126,11 +152,24 @@ def evaluate_dataset(
         else:
             emb_passages.extend(batch_emb_passages)
 
+    # import pdb; pdb.set_trace()
+    if document_input == "image":
+        emb_passages = emb_passages
+    elif document_input == "image+text":
+        emb_passages_text = vision_retriever.forward_queries(ds["text_description"], batch_size = batch_passage)
+        if emb_passages[0].shape[0] == 1152: # SigLIPRetriever
+            emb_passages = fuse_passage_tensors(emb_passages, emb_passages_text,fuse_method='average')
+        elif emb_passages[0].shape[1] == 128: # ColPaliRetriever
+            emb_passages = fuse_passage_tensors(emb_passages, emb_passages_text,fuse_method='concat')
+    elif document_input == "text":
+        emb_passages = vision_retriever.forward_queries(ds["text_description"], batch_size = batch_passage)
+
     if embedding_pooler is not None:
         for idx, emb_document in tqdm(enumerate(emb_passages), total=len(emb_passages), desc="Pooling embeddings..."):
             emb_document, _ = embedding_pooler.pool_embeddings(emb_document)
             emb_passages[idx] = emb_document
 
+  
     # Get the similarity scores
     scores = vision_retriever.get_scores(emb_queries, emb_passages, batch_size=batch_score)
 

@@ -15,18 +15,18 @@ export PYTHONPATH=$(pwd):$(pwd)/src:$PYTHONPATH
 
 # Define the document input types
 INPUT_TYPES=("text" "image" "image+text")
-MODEL_TYPES=("SigLIP" "ColPali")
+MODEL_TYPES=("SigLIP" )
 DATASETS=(
-          "vidore/docvqa_test_subsampled_ocr_chunk" \
-          "vidore/arxivqa_test_subsampled_ocr_chunk" \
-            "vidore/infovqa_test_subsampled_ocr_chunk" \
+        #   "vidore/docvqa_test_subsampled_ocr_chunk" \
+        #   "vidore/arxivqa_test_subsampled_ocr_chunk" \
+        #     "vidore/infovqa_test_subsampled_ocr_chunk" \
             "vidore/tabfquad_test_subsampled_ocr_chunk" \
             "vidore/tatdqa_test_ocr_chunk" \
-            "vidore/shiftproject_test_ocr_chunk"\
-            "vidore/syntheticDocQA_artificial_intelligence_test_ocr_chunk"\
-            "vidore/syntheticDocQA_energy_test_ocr_chunk" \
-            "vidore/syntheticDocQA_government_reports_test_ocr_chunk"\
-            "vidore/syntheticDocQA_healthcare_industry_test_ocr_chunk"\
+            # "vidore/shiftproject_test_ocr_chunk"\
+            # "vidore/syntheticDocQA_artificial_intelligence_test_ocr_chunk"\
+            # "vidore/syntheticDocQA_energy_test_ocr_chunk" \
+            # "vidore/syntheticDocQA_government_reports_test_ocr_chunk"\
+            # "vidore/syntheticDocQA_healthcare_industry_test_ocr_chunk"\
             )
 
 
@@ -39,3 +39,14 @@ for model_type in "${MODEL_TYPES[@]}"; do
         done
     done
 done
+
+
+
+
+# #for model_type in "mtnp0923" "mtnp0925" "mtnp1114"
+# for model_type in "SigLIP" "colpali"
+#     for input_type in "text" "image" "image+text"
+#     do
+#         echo "Hello, Welcome for model_type $model_type."
+#         sbatch snellius_job.sh $model_type $input_type
+#     done

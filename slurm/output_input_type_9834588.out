@@ -1,0 +1,14 @@
+
+JOB STATISTICS
+==============
+Job ID: 9834588
+Cluster: snellius
+User/Group: wangsh/wangsh
+State: CANCELLED (exit code 15)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 00:02:08 core-walltime
+Job Wall-clock time: 00:00:08
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 60.00 GB (60.00 GB/node)

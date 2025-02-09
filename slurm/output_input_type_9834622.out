@@ -1,0 +1,204 @@
+============================================================================================== 
+Warning! Mixing Conda and module environments may lead to corruption of the
+user environment. 
+We do not recommend users mixing those two environments unless absolutely
+necessary. Note that 
+SURF does not provide any support for Conda environment.
+For more information, please refer to our software policy page:
+https://servicedesk.surf.nl/wiki/display/WIKI/Software+policy+Snellius#SoftwarepolicySnellius-UseofAnacondaandMinicondaenvironmentsonSnellius 
+
+Remember that many packages have already been installed on the system and can
+be loaded using 
+the 'module load <package__name>' command. If you are uncertain if a package is
+already available 
+on the system, please use 'module avail' or 'module spider' to search for it.
+============================================================================================== 
+/var/spool/slurm/slurmd/job9834622/slurm_script: line 15: cd: ../../projects/0/prjs0996/vidore-benchmark: No such file or directory
+`config.hidden_act` is ignored, you should use `config.hidden_activation` instead.
+Gemma's activation function will be set to `gelu_pytorch_tanh`. Please, use
+`config.hidden_activation` if you want to override this behaviour.
+See https://github.com/huggingface/transformers/pull/29402 for more details.
+args.only_text False
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.02s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.52s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.74s/it]
+
+Processing group 0-1336
+Forward pass queries...:   0%|          | 0/10 [00:00<?, ?it/s]Forward pass queries...:  10%|█         | 1/10 [00:00<00:02,  4.08it/s]Forward pass queries...:  50%|█████     | 5/10 [00:00<00:00, 15.86it/s]Forward pass queries...:  90%|█████████ | 9/10 [00:00<00:00, 22.13it/s]                                                                       Dataloader pre-batching:   0%|          | 0/14 [00:00<?, ?it/s]
+Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
+Forward pass documents...:  10%|█         | 1/10 [00:00<00:06,  1.29it/s][A
+Forward pass documents...:  20%|██        | 2/10 [00:01<00:05,  1.38it/s][A
+Forward pass documents...:  30%|███       | 3/10 [00:02<00:04,  1.43it/s][A
+Forward pass documents...:  40%|████      | 4/10 [00:02<00:04,  1.45it/s][A
+Forward pass documents...:  50%|█████     | 5/10 [00:03<00:03,  1.47it/s][A
+Forward pass documents...:  60%|██████    | 6/10 [00:04<00:02,  1.47it/s][A
+Forward pass documents...:  70%|███████   | 7/10 [00:04<00:02,  1.47it/s][A
+Forward pass documents...:  80%|████████  | 8/10 [00:05<00:01,  1.46it/s][A
+Forward pass documents...:  90%|█████████ | 9/10 [00:06<00:00,  1.47it/s][A
+Forward pass documents...: 100%|██████████| 10/10 [00:06<00:00,  1.47it/s][A
+                                                                          [ADataloader pre-batching:   7%|▋         | 1/14 [00:08<01:44,  8.07s/it]
+Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
+Forward pass documents...:  10%|█         | 1/10 [00:00<00:05,  1.52it/s][A
+Forward pass documents...:  20%|██        | 2/10 [00:01<00:05,  1.52it/s][A
+Forward pass documents...:  30%|███       | 3/10 [00:01<00:04,  1.51it/s][A
+Forward pass documents...:  40%|████      | 4/10 [00:02<00:03,  1.51it/s][A
+Forward pass documents...:  50%|█████     | 5/10 [00:03<00:03,  1.51it/s][A
+Forward pass documents...:  60%|██████    | 6/10 [00:03<00:02,  1.51it/s][A
+Forward pass documents...:  70%|███████   | 7/10 [00:04<00:01,  1.51it/s][A
+Forward pass documents...:  80%|████████  | 8/10 [00:05<00:01,  1.53it/s][A
+Forward pass documents...:  90%|█████████ | 9/10 [00:05<00:00,  1.53it/s][A
+Forward pass documents...: 100%|██████████| 10/10 [00:06<00:00,  1.52it/s][A
+                                                                          [ADataloader pre-batching:  14%|█▍        | 2/14 [00:15<01:34,  7.88s/it]
+Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
+Forward pass documents...:  10%|█         | 1/10 [00:00<00:05,  1.51it/s][A
+Forward pass documents...:  20%|██        | 2/10 [00:01<00:05,  1.52it/s][A
+Forward pass documents...:  30%|███       | 3/10 [00:01<00:04,  1.52it/s][A
+Forward pass documents...:  40%|████      | 4/10 [00:02<00:03,  1.52it/s][A
+Forward pass documents...:  50%|█████     | 5/10 [00:03<00:03,  1.52it/s][A
+Forward pass documents...:  60%|██████    | 6/10 [00:03<00:02,  1.52it/s][A
+Forward pass documents...:  70%|███████   | 7/10 [00:04<00:01,  1.52it/s][A
+Forward pass documents...:  80%|████████  | 8/10 [00:05<00:01,  1.52it/s][A
+Forward pass documents...:  90%|█████████ | 9/10 [00:05<00:00,  1.52it/s][A
+Forward pass documents...: 100%|██████████| 10/10 [00:06<00:00,  1.51it/s][A
+                                                                          [ADataloader pre-batching:  21%|██▏       | 3/14 [00:23<01:25,  7.79s/it]
+Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
+Forward pass documents...:  10%|█         | 1/10 [00:00<00:05,  1.55it/s][A
+Forward pass documents...:  20%|██        | 2/10 [00:01<00:05,  1.52it/s][A
+Forward pass documents...:  30%|███       | 3/10 [00:01<00:04,  1.53it/s][A
+Forward pass documents...:  40%|████      | 4/10 [00:02<00:03,  1.54it/s][A
+Forward pass documents...:  50%|█████     | 5/10 [00:03<00:03,  1.53it/s][A
+Forward pass documents...:  60%|██████    | 6/10 [00:03<00:02,  1.52it/s][A
+Forward pass documents...:  70%|███████   | 7/10 [00:04<00:01,  1.52it/s][A
+Forward pass documents...:  80%|████████  | 8/10 [00:05<00:01,  1.53it/s][A
+Forward pass documents...:  90%|█████████ | 9/10 [00:05<00:00,  1.53it/s][A
+Forward pass documents...: 100%|██████████| 10/10 [00:06<00:00,  1.53it/s][A
+                                                                          [ADataloader pre-batching:  29%|██▊       | 4/14 [00:31<01:17,  7.78s/it]
+Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
+Forward pass documents...:  10%|█         | 1/10 [00:00<00:05,  1.54it/s][A
+Forward pass documents...:  20%|██        | 2/10 [00:01<00:05,  1.53it/s][A
+Forward pass documents...:  30%|███       | 3/10 [00:01<00:04,  1.53it/s][A
+Forward pass documents...:  40%|████      | 4/10 [00:02<00:03,  1.53it/s][A
+Forward pass documents...:  50%|█████     | 5/10 [00:03<00:03,  1.53it/s][A
+Forward pass documents...:  60%|██████    | 6/10 [00:03<00:02,  1.53it/s][A
+Forward pass documents...:  70%|███████   | 7/10 [00:04<00:01,  1.53it/s][A
+Forward pass documents...:  80%|████████  | 8/10 [00:05<00:01,  1.53it/s][A
+Forward pass documents...:  90%|█████████ | 9/10 [00:05<00:00,  1.53it/s][A
+Forward pass documents...: 100%|██████████| 10/10 [00:06<00:00,  1.52it/s][A
+                                                                          [ADataloader pre-batching:  36%|███▌      | 5/14 [00:38<01:09,  7.71s/it]
+Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
+Forward pass documents...:  10%|█         | 1/10 [00:00<00:05,  1.52it/s][A
+Forward pass documents...:  20%|██        | 2/10 [00:01<00:05,  1.53it/s][A
+Forward pass documents...:  30%|███       | 3/10 [00:01<00:04,  1.52it/s][A
+Forward pass documents...:  40%|████      | 4/10 [00:02<00:03,  1.52it/s][A
+Forward pass documents...:  50%|█████     | 5/10 [00:03<00:03,  1.51it/s][A
+Forward pass documents...:  60%|██████    | 6/10 [00:03<00:02,  1.51it/s][A
+Forward pass documents...:  70%|███████   | 7/10 [00:04<00:01,  1.51it/s][A
+Forward pass documents...:  80%|████████  | 8/10 [00:05<00:01,  1.52it/s][A
+Forward pass documents...:  90%|█████████ | 9/10 [00:05<00:00,  1.52it/s][A
+Forward pass documents...: 100%|██████████| 10/10 [00:06<00:00,  1.53it/s][A
+                                                                          [ADataloader pre-batching:  43%|████▎     | 6/14 [00:46<01:01,  7.71s/it]
+Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
+Forward pass documents...:  10%|█         | 1/10 [00:00<00:05,  1.54it/s][A
+Forward pass documents...:  20%|██        | 2/10 [00:01<00:05,  1.55it/s][A
+Forward pass documents...:  30%|███       | 3/10 [00:01<00:04,  1.53it/s][A
+Forward pass documents...:  40%|████      | 4/10 [00:02<00:03,  1.53it/s][A
+Forward pass documents...:  50%|█████     | 5/10 [00:03<00:03,  1.52it/s][A
+Forward pass documents...:  60%|██████    | 6/10 [00:03<00:02,  1.52it/s][A
+Forward pass documents...:  70%|███████   | 7/10 [00:04<00:01,  1.52it/s][A
+Forward pass documents...:  80%|████████  | 8/10 [00:05<00:01,  1.53it/s][A
+Forward pass documents...:  90%|█████████ | 9/10 [00:05<00:00,  1.52it/s][A
+Forward pass documents...: 100%|██████████| 10/10 [00:06<00:00,  1.52it/s][A
+                                                                          [ADataloader pre-batching:  50%|█████     | 7/14 [00:54<00:54,  7.81s/it]
+Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
+Forward pass documents...:  10%|█         | 1/10 [00:00<00:05,  1.51it/s][A
+Forward pass documents...:  20%|██        | 2/10 [00:01<00:05,  1.52it/s][A
+Forward pass documents...:  30%|███       | 3/10 [00:01<00:04,  1.52it/s][A
+Forward pass documents...:  40%|████      | 4/10 [00:02<00:03,  1.52it/s][A
+Forward pass documents...:  50%|█████     | 5/10 [00:03<00:03,  1.53it/s][A
+Forward pass documents...:  60%|██████    | 6/10 [00:03<00:02,  1.53it/s][A
+Forward pass documents...:  70%|███████   | 7/10 [00:04<00:01,  1.53it/s][A
+Forward pass documents...:  80%|████████  | 8/10 [00:05<00:01,  1.54it/s][A
+Forward pass documents...:  90%|█████████ | 9/10 [00:05<00:00,  1.53it/s][A
+Forward pass documents...: 100%|██████████| 10/10 [00:06<00:00,  1.53it/s][A
+                                                                          [ADataloader pre-batching:  57%|█████▋    | 8/14 [01:02<00:46,  7.82s/it]
+Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
+Forward pass documents...:  10%|█         | 1/10 [00:00<00:05,  1.53it/s][A
+Forward pass documents...:  20%|██        | 2/10 [00:01<00:05,  1.55it/s][A
+Forward pass documents...:  30%|███       | 3/10 [00:01<00:04,  1.53it/s][A
+Forward pass documents...:  40%|████      | 4/10 [00:02<00:03,  1.52it/s][A
+Forward pass documents...:  50%|█████     | 5/10 [00:03<00:03,  1.53it/s][A
+Forward pass documents...:  60%|██████    | 6/10 [00:03<00:02,  1.54it/s][A
+Forward pass documents...:  70%|███████   | 7/10 [00:04<00:01,  1.53it/s][A
+Forward pass documents...:  80%|████████  | 8/10 [00:05<00:01,  1.52it/s][A
+Forward pass documents...:  90%|█████████ | 9/10 [00:05<00:00,  1.53it/s][A
+Forward pass documents...: 100%|██████████| 10/10 [00:06<00:00,  1.53it/s][A
+                                                                          [ADataloader pre-batching:  64%|██████▍   | 9/14 [01:10<00:38,  7.78s/it]
+Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
+Forward pass documents...:  10%|█         | 1/10 [00:00<00:05,  1.52it/s][A
+Forward pass documents...:  20%|██        | 2/10 [00:01<00:05,  1.52it/s][A
+Forward pass documents...:  30%|███       | 3/10 [00:01<00:04,  1.51it/s][A
+Forward pass documents...:  40%|████      | 4/10 [00:02<00:03,  1.52it/s][A
+Forward pass documents...:  50%|█████     | 5/10 [00:03<00:03,  1.52it/s][A
+Forward pass documents...:  60%|██████    | 6/10 [00:03<00:02,  1.53it/s][A
+Forward pass documents...:  70%|███████   | 7/10 [00:04<00:01,  1.53it/s][A
+Forward pass documents...:  80%|████████  | 8/10 [00:05<00:01,  1.52it/s][A
+Forward pass documents...:  90%|█████████ | 9/10 [00:05<00:00,  1.53it/s][A
+Forward pass documents...: 100%|██████████| 10/10 [00:06<00:00,  1.53it/s][A
+                                                                          [ADataloader pre-batching:  71%|███████▏  | 10/14 [01:17<00:30,  7.74s/it]
+Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
+Forward pass documents...:  10%|█         | 1/10 [00:00<00:05,  1.50it/s][A
+Forward pass documents...:  20%|██        | 2/10 [00:01<00:05,  1.54it/s][A
+Forward pass documents...:  30%|███       | 3/10 [00:01<00:04,  1.54it/s][A
+Forward pass documents...:  40%|████      | 4/10 [00:02<00:03,  1.54it/s][A
+Forward pass documents...:  50%|█████     | 5/10 [00:03<00:03,  1.54it/s][A
+Forward pass documents...:  60%|██████    | 6/10 [00:03<00:02,  1.53it/s][A
+Forward pass documents...:  70%|███████   | 7/10 [00:04<00:01,  1.53it/s][A
+Forward pass documents...:  80%|████████  | 8/10 [00:05<00:01,  1.52it/s][A
+Forward pass documents...:  90%|█████████ | 9/10 [00:05<00:00,  1.52it/s][A
+Forward pass documents...: 100%|██████████| 10/10 [00:06<00:00,  1.51it/s][A
+                                                                          [ADataloader pre-batching:  79%|███████▊  | 11/14 [01:25<00:23,  7.69s/it]
+Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
+Forward pass documents...:  10%|█         | 1/10 [00:00<00:06,  1.50it/s][A
+Forward pass documents...:  20%|██        | 2/10 [00:01<00:05,  1.50it/s][A
+Forward pass documents...:  30%|███       | 3/10 [00:01<00:04,  1.51it/s][A
+Forward pass documents...:  40%|████      | 4/10 [00:02<00:03,  1.51it/s][A
+Forward pass documents...:  50%|█████     | 5/10 [00:03<00:03,  1.52it/s][A
+Forward pass documents...:  60%|██████    | 6/10 [00:03<00:02,  1.52it/s][A
+Forward pass documents...:  70%|███████   | 7/10 [00:04<00:01,  1.52it/s][A
+Forward pass documents...:  80%|████████  | 8/10 [00:05<00:01,  1.52it/s][A
+Forward pass documents...:  90%|█████████ | 9/10 [00:05<00:00,  1.53it/s][A
+Forward pass documents...: 100%|██████████| 10/10 [00:06<00:00,  1.53it/s][A
+                                                                          [ADataloader pre-batching:  86%|████████▌ | 12/14 [01:32<00:15,  7.66s/it]
+Forward pass documents...:   0%|          | 0/10 [00:00<?, ?it/s][A
+Forward pass documents...:  10%|█         | 1/10 [00:00<00:05,  1.52it/s][A
+Forward pass documents...:  20%|██        | 2/10 [00:01<00:05,  1.52it/s][A
+Forward pass documents...:  30%|███       | 3/10 [00:01<00:04,  1.52it/s][A
+Forward pass documents...:  40%|████      | 4/10 [00:02<00:03,  1.53it/s][A
+Forward pass documents...:  50%|█████     | 5/10 [00:03<00:03,  1.52it/s][A
+Forward pass documents...:  60%|██████    | 6/10 [00:03<00:02,  1.52it/s][A
+Forward pass documents...:  70%|███████   | 7/10 [00:04<00:01,  1.52it/s][A
+Forward pass documents...:  80%|████████  | 8/10 [00:05<00:01,  1.52it/s][A
+Forward pass documents...:  90%|█████████ | 9/10 [00:05<00:00,  1.52it/s][A
+Forward pass documents...: 100%|██████████| 10/10 [00:06<00:00,  1.52it/s][A
+                                                                          [ADataloader pre-batching:  93%|█████████▎| 13/14 [01:40<00:07,  7.78s/it]
+Forward pass documents...:   0%|          | 0/4 [00:00<?, ?it/s][A
+Forward pass documents...:  25%|██▌       | 1/4 [00:00<00:01,  1.51it/s][A
+Forward pass documents...:  50%|█████     | 2/4 [00:01<00:01,  1.52it/s][A
+Forward pass documents...:  75%|███████▌  | 3/4 [00:01<00:00,  1.54it/s][A
+Forward pass documents...: 100%|██████████| 4/4 [00:02<00:00,  1.81it/s][A
+                                                                        [ADataloader pre-batching: 100%|██████████| 14/14 [01:43<00:00,  6.26s/it]Dataloader pre-batching: 100%|██████████| 14/14 [01:43<00:00,  7.41s/it]
+Forward pass queries...:   0%|          | 0/134 [00:00<?, ?it/s]Forward pass queries...:   1%|          | 1/134 [00:00<00:15,  8.49it/s]Forward pass queries...:   1%|▏         | 2/134 [00:00<00:16,  8.11it/s]Forward pass queries...:   2%|▏         | 3/134 [00:00<00:15,  8.23it/s]Forward pass queries...:   3%|▎         | 4/134 [00:00<00:16,  8.01it/s]Forward pass queries...:   4%|▎         | 5/134 [00:00<00:15,  8.09it/s]Forward pass queries...:   4%|▍         | 6/134 [00:00<00:16,  7.88it/s]Forward pass queries...:   5%|▌         | 7/134 [00:00<00:18,  7.03it/s]Forward pass queries...:   6%|▌         | 8/134 [00:01<00:17,  7.36it/s]Forward pass queries...:   7%|▋         | 9/134 [00:01<00:16,  7.73it/s]Forward pass queries...:   7%|▋         | 10/134 [00:01<00:17,  7.28it/s]Forward pass queries...:   8%|▊         | 11/134 [00:01<00:16,  7.50it/s]Forward pass queries...:   9%|▉         | 12/134 [00:01<00:15,  7.73it/s]Forward pass queries...:  10%|▉         | 13/134 [00:01<00:15,  7.68it/s]Forward pass queries...:  10%|█         | 14/134 [00:01<00:16,  7.41it/s]Forward pass queries...:  11%|█         | 15/134 [00:01<00:15,  7.77it/s]Forward pass queries...:  12%|█▏        | 16/134 [00:02<00:16,  7.37it/s]Forward pass queries...:  13%|█▎        | 17/134 [00:02<00:15,  7.63it/s]Forward pass queries...:  13%|█▎        | 18/134 [00:02<00:14,  7.76it/s]Forward pass queries...:  14%|█▍        | 19/134 [00:02<00:16,  7.09it/s]Forward pass queries...:  16%|█▌        | 21/134 [00:02<00:15,  7.29it/s]Forward pass queries...:  16%|█▋        | 22/134 [00:02<00:15,  7.35it/s]Forward pass queries...:  17%|█▋        | 23/134 [00:03<00:15,  7.02it/s]Forward pass queries...:  18%|█▊        | 24/134 [00:03<00:15,  7.13it/s]Forward pass queries...:  19%|█▊        | 25/134 [00:03<00:14,  7.28it/s]Forward pass queries...:  19%|█▉        | 26/134 [00:03<00:14,  7.33it/s]Forward pass queries...:  20%|██        | 27/134 [00:03<00:15,  7.06it/s]Forward pass queries...:  21%|██        | 28/134 [00:03<00:14,  7.32it/s]Forward pass queries...:  22%|██▏       | 29/134 [00:03<00:14,  7.34it/s]Forward pass queries...:  22%|██▏       | 30/134 [00:04<00:13,  7.54it/s]Forward pass queries...:  23%|██▎       | 31/134 [00:04<00:13,  7.59it/s]Forward pass queries...:  24%|██▍       | 32/134 [00:04<00:14,  7.27it/s]Forward pass queries...:  25%|██▍       | 33/134 [00:04<00:14,  7.12it/s]Forward pass queries...:  26%|██▌       | 35/134 [00:04<00:11,  8.61it/s]Forward pass queries...:  27%|██▋       | 36/134 [00:04<00:11,  8.38it/s]Forward pass queries...:  28%|██▊       | 37/134 [00:04<00:11,  8.26it/s]Forward pass queries...:  28%|██▊       | 38/134 [00:05<00:12,  7.87it/s]Forward pass queries...:  29%|██▉       | 39/134 [00:05<00:13,  6.98it/s]Forward pass queries...:  30%|██▉       | 40/134 [00:05<00:12,  7.51it/s]Forward pass queries...:  31%|███       | 41/134 [00:05<00:12,  7.60it/s]Forward pass queries...:  31%|███▏      | 42/134 [00:05<00:12,  7.36it/s]Forward pass queries...:  32%|███▏      | 43/134 [00:05<00:12,  7.38it/s]Forward pass queries...:  33%|███▎      | 44/134 [00:05<00:13,  6.79it/s]Forward pass queries...:  34%|███▎      | 45/134 [00:06<00:12,  7.13it/s]Forward pass queries...:  34%|███▍      | 46/134 [00:06<00:11,  7.36it/s]Forward pass queries...:  35%|███▌      | 47/134 [00:06<00:11,  7.27it/s]Forward pass queries...:  36%|███▌      | 48/134 [00:06<00:11,  7.44it/s]Forward pass queries...:  37%|███▋      | 49/134 [00:06<00:12,  7.05it/s]Forward pass queries...:  37%|███▋      | 50/134 [00:06<00:13,  6.36it/s]Forward pass queries...:  38%|███▊      | 51/134 [00:06<00:12,  6.85it/s]Forward pass queries...:  39%|███▉      | 52/134 [00:07<00:12,  6.72it/s]Forward pass queries...:  40%|███▉      | 53/134 [00:07<00:11,  6.96it/s]Forward pass queries...:  40%|████      | 54/134 [00:07<00:10,  7.47it/s]Forward pass queries...:  41%|████      | 55/134 [00:07<00:10,  7.42it/s]Forward pass queries...:  42%|████▏     | 56/134 [00:07<00:09,  7.91it/s]Forward pass queries...:  43%|████▎     | 57/134 [00:07<00:10,  7.43it/s]Forward pass queries...:  44%|████▍     | 59/134 [00:07<00:09,  8.22it/s]Forward pass queries...:  45%|████▍     | 60/134 [00:08<00:10,  7.20it/s]Forward pass queries...:  46%|████▌     | 61/134 [00:08<00:10,  7.17it/s]Forward pass queries...:  46%|████▋     | 62/134 [00:08<00:09,  7.52it/s]Forward pass queries...:  47%|████▋     | 63/134 [00:08<00:09,  7.37it/s]Forward pass queries...:  48%|████▊     | 64/134 [00:08<00:09,  7.65it/s]Forward pass queries...:  49%|████▊     | 65/134 [00:08<00:09,  7.24it/s]Forward pass queries...:  49%|████▉     | 66/134 [00:08<00:08,  7.65it/s]Forward pass queries...:  50%|█████     | 67/134 [00:09<00:09,  7.05it/s]Forward pass queries...:  51%|█████     | 68/134 [00:09<00:10,  6.01it/s]Forward pass queries...:  51%|█████▏    | 69/134 [00:09<00:10,  6.42it/s]Forward pass queries...:  52%|█████▏    | 70/134 [00:09<00:09,  6.67it/s]Forward pass queries...:  53%|█████▎    | 71/134 [00:09<00:08,  7.09it/s]Forward pass queries...:  54%|█████▎    | 72/134 [00:09<00:09,  6.22it/s]Forward pass queries...:  54%|█████▍    | 73/134 [00:10<00:09,  6.38it/s]Forward pass queries...:  55%|█████▌    | 74/134 [00:10<00:09,  6.56it/s]Forward pass queries...:  56%|█████▌    | 75/134 [00:10<00:08,  6.66it/s]Forward pass queries...:  57%|█████▋    | 76/134 [00:10<00:08,  7.01it/s]Forward pass queries...:  57%|█████▋    | 77/134 [00:10<00:09,  6.21it/s]Forward pass queries...:  59%|█████▉    | 79/134 [00:10<00:07,  7.71it/s]Forward pass queries...:  60%|█████▉    | 80/134 [00:10<00:07,  7.67it/s]Forward pass queries...:  60%|██████    | 81/134 [00:11<00:07,  7.56it/s]Forward pass queries...:  61%|██████    | 82/134 [00:11<00:06,  7.69it/s]Forward pass queries...:  62%|██████▏   | 83/134 [00:11<00:06,  7.93it/s]Forward pass queries...:  63%|██████▎   | 84/134 [00:11<00:06,  8.19it/s]Forward pass queries...:  64%|██████▍   | 86/134 [00:11<00:05,  8.78it/s]Forward pass queries...:  65%|██████▍   | 87/134 [00:11<00:06,  7.59it/s]Forward pass queries...:  66%|██████▌   | 88/134 [00:11<00:06,  7.09it/s]Forward pass queries...:  66%|██████▋   | 89/134 [00:12<00:06,  6.94it/s]Forward pass queries...:  67%|██████▋   | 90/134 [00:12<00:05,  7.40it/s]Forward pass queries...:  68%|██████▊   | 91/134 [00:12<00:05,  7.27it/s]Forward pass queries...:  69%|██████▉   | 93/134 [00:12<00:05,  7.80it/s]Forward pass queries...:  70%|███████   | 94/134 [00:12<00:05,  7.00it/s]Forward pass queries...:  71%|███████   | 95/134 [00:12<00:05,  7.09it/s]Forward pass queries...:  72%|███████▏  | 96/134 [00:13<00:05,  7.40it/s]Forward pass queries...:  73%|███████▎  | 98/134 [00:13<00:04,  7.61it/s]Forward pass queries...:  74%|███████▍  | 99/134 [00:13<00:04,  7.44it/s]Forward pass queries...:  75%|███████▍  | 100/134 [00:13<00:04,  7.50it/s]Forward pass queries...:  75%|███████▌  | 101/134 [00:13<00:04,  7.07it/s]Forward pass queries...:  76%|███████▌  | 102/134 [00:13<00:04,  7.10it/s]Forward pass queries...:  77%|███████▋  | 103/134 [00:14<00:04,  6.98it/s]Forward pass queries...:  78%|███████▊  | 104/134 [00:14<00:04,  6.48it/s]Forward pass queries...:  78%|███████▊  | 105/134 [00:14<00:04,  6.63it/s]Forward pass queries...:  79%|███████▉  | 106/134 [00:14<00:03,  7.19it/s]Forward pass queries...:  80%|███████▉  | 107/134 [00:14<00:03,  7.12it/s]Forward pass queries...:  81%|████████  | 108/134 [00:14<00:03,  7.59it/s]Forward pass queries...:  81%|████████▏ | 109/134 [00:14<00:03,  7.59it/s]Forward pass queries...:  82%|████████▏ | 110/134 [00:15<00:03,  7.49it/s]Forward pass queries...:  83%|████████▎ | 111/134 [00:15<00:03,  7.20it/s]Forward pass queries...:  84%|████████▎ | 112/134 [00:15<00:03,  5.97it/s]Forward pass queries...:  84%|████████▍ | 113/134 [00:15<00:03,  6.25it/s]Forward pass queries...:  85%|████████▌ | 114/134 [00:15<00:03,  6.53it/s]Forward pass queries...:  86%|████████▌ | 115/134 [00:15<00:02,  6.60it/s]Forward pass queries...:  87%|████████▋ | 116/134 [00:15<00:02,  6.82it/s]Forward pass queries...:  87%|████████▋ | 117/134 [00:16<00:02,  7.23it/s]Forward pass queries...:  88%|████████▊ | 118/134 [00:16<00:02,  7.47it/s]Forward pass queries...:  89%|████████▉ | 119/134 [00:16<00:01,  7.51it/s]Forward pass queries...:  90%|████████▉ | 120/134 [00:16<00:01,  7.54it/s]Forward pass queries...:  90%|█████████ | 121/134 [00:16<00:01,  7.18it/s]Forward pass queries...:  92%|█████████▏| 123/134 [00:16<00:01,  7.02it/s]Forward pass queries...:  93%|█████████▎| 124/134 [00:17<00:01,  7.31it/s]Forward pass queries...:  93%|█████████▎| 125/134 [00:17<00:01,  7.33it/s]Forward pass queries...:  94%|█████████▍| 126/134 [00:17<00:01,  6.25it/s]Forward pass queries...:  95%|█████████▍| 127/134 [00:17<00:01,  6.06it/s]Forward pass queries...:  96%|█████████▌| 128/134 [00:17<00:00,  6.58it/s]Forward pass queries...:  96%|█████████▋| 129/134 [00:17<00:00,  6.33it/s]Forward pass queries...:  97%|█████████▋| 130/134 [00:17<00:00,  6.60it/s]Forward pass queries...:  98%|█████████▊| 131/134 [00:18<00:00,  7.11it/s]Forward pass queries...:  99%|█████████▊| 132/134 [00:18<00:00,  7.41it/s]Forward pass queries...:  99%|█████████▉| 133/134 [00:18<00:00,  7.51it/s]                                                                          Group metrics: {'ndcg_at_1': 0.7, 'ndcg_at_3': 0.81595, 'ndcg_at_5': 0.82026, 'ndcg_at_10': 0.82715, 'ndcg_at_20': 0.8296, 'ndcg_at_50': 0.83155, 'ndcg_at_100': 0.8331, 'map_at_1': 0.7, 'map_at_3': 0.79, 'map_at_5': 0.7925, 'map_at_10': 0.7956, 'map_at_20': 0.79622, 'map_at_50': 0.79651, 'map_at_100': 0.79663, 'recall_at_1': 0.7, 'recall_at_3': 0.89, 'recall_at_5': 0.9, 'recall_at_10': 0.92, 'recall_at_20': 0.93, 'recall_at_50': 0.94, 'recall_at_100': 0.95, 'precision_at_1': 0.7, 'precision_at_3': 0.29667, 'precision_at_5': 0.18, 'precision_at_10': 0.092, 'precision_at_20': 0.0465, 'precision_at_50': 0.0188, 'precision_at_100': 0.0095, 'mrr_at_1': 0.71, 'mrr_at_3': 0.7983333333333335, 'mrr_at_5': 0.7983333333333335, 'mrr_at_10': 0.8014285714285714, 'mrr_at_20': 0.802095238095238, 'mrr_at_50': 0.8023893557422969, 'mrr_at_100': 0.8025113069618093, 'naucs_at_1_max': 0.4494325346784362, 'naucs_at_1_std': 0.06737524770311672, 'naucs_at_1_diff1': 0.7431633939830662, 'naucs_at_3_max': 0.5686367150588412, 'naucs_at_3_std': 0.1255046817283748, 'naucs_at_3_diff1': 0.7049652091744685, 'naucs_at_5_max': 0.582259570494864, 'naucs_at_5_std': 0.12413632119514552, 'naucs_at_5_diff1': 0.6793183940242762, 'naucs_at_10_max': 0.7467903828197948, 'naucs_at_10_std': 0.17413632119514777, 'naucs_at_10_diff1': 0.6338702147525689, 'naucs_at_20_max': 0.7743097238895558, 'naucs_at_20_std': 0.2795118047218888, 'naucs_at_20_diff1': 0.6002400960384168, 'naucs_at_50_max': 0.7829909741674408, 'naucs_at_50_std': 0.4200124494242164, 'naucs_at_50_diff1': 0.6079209461562416, 'naucs_at_100_max': 0.7395891690009352, 'naucs_at_100_std': 0.359570494864615, 'naucs_at_100_diff1': 0.5556489262371637}
+args: Namespace(dataset='vidore/syntheticDocQA_government_reports_test_ocr_chunk', model='ColPali', rerank=None, document_input='text', only_text=False, size=1)
+Results saved to eval_res/colpali_eval_gover_ColPali_text_20250209_122735.json
+
+JOB STATISTICS
+==============
+Job ID: 9834622
+Cluster: snellius
+User/Group: wangsh/wangsh
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 16
+CPU Utilized: 00:02:57
+CPU Efficiency: 6.83% of 00:43:12 core-walltime
+Job Wall-clock time: 00:02:42
+Memory Utilized: 4.35 GB
+Memory Efficiency: 7.25% of 60.00 GB
