@@ -15,10 +15,12 @@ from vidore_benchmark.retrievers.colpali_retriever import ColPaliRetriever
 from vidore_benchmark.retrievers.siglip_retriever import SigLIPRetriever
 
 from vidore_benchmark.utils.iter_utils import batched
+from vidore_benchmark.utils.rag import chunking, merge_retrieval_results
 from vidore_benchmark.models.run_qw_7B import QwenVLModel
 from vidore_benchmark.models.run_openai import OpenAIImageRanker
 
-def get_relevant_docs_results(doc_results, ds, k=8):
+
+def get_rerank_docs_results(doc_results, ds, k=8):
     """
     Rerank top k results using vision language model
     Args:
@@ -56,7 +58,6 @@ def get_relevant_docs_results(doc_results, ds, k=8):
     
     return reranked_results
 
-
 def fuse_passage_tensors(tensors1, tensors2, fuse_method):
     # Ensure both lists have the same length
     assert len(tensors1) == len(tensors1), "Tensor lists must have the same length"
@@ -86,6 +87,7 @@ def evaluate_dataset(
     embedding_pooler: Optional[BaseEmbeddingPooler] = None,
     rerank = True,
     document_input = str,
+    chunk_size = 100,
 ) -> Dict[str, Optional[float]]:
     """
     Evaluate the model on a given dataset using the MTEB metrics.
@@ -97,7 +99,6 @@ def evaluate_dataset(
     - text_description: the text description (i.e. the page caption or the text chunks) if
         `use_visual_embedding` is False
     """
-    # import pdb; pdb.set_trace()
     # Dataset: sanity check
     passage_column_name = "image" if vision_retriever.use_visual_embedding else "text_description"
     required_columns = ["query", passage_column_name, "image_filename"]
@@ -135,7 +136,7 @@ def evaluate_dataset(
     # that will be fed to the model in batches (this should be fine for queries as their memory footprint
     # is negligible. This optimization is about efficient data loading, and is not related to the model's
     # forward pass which is also batched.
-    emb_passages: List[torch.Tensor] = []
+    image_emb_passages: List[torch.Tensor] = []
 
     dataloader_prebatch_size = 10 * batch_passage
 
@@ -148,36 +149,63 @@ def evaluate_dataset(
         batch_emb_passages = vision_retriever.forward_passages(passages, batch_size=batch_passage)
         if isinstance(batch_emb_passages, torch.Tensor):
             batch_emb_passages = list(torch.unbind(batch_emb_passages))
-            emb_passages.extend(batch_emb_passages)
+            image_emb_passages.extend(batch_emb_passages)
         else:
-            emb_passages.extend(batch_emb_passages)
+            image_emb_passages.extend(batch_emb_passages)
+
+    text_chunks = []
+    chunk_to_doc_mapping = []  # To track which chunk belongs to which document
+
+    for idx, doc in enumerate(ds):
+        # text = get_docu(ds)
+        doc_text = doc["text_description"]
+        doc_chunks = chunking(doc_text, chunk_size)
+        text_chunks.extend(doc_chunks)
+        chunk_to_doc_mapping.extend([idx] * len(doc_chunks))
+ 
+    # import pdb; pdb.set_trace()
+    # Process text chunks
+    text_emb_passages: List[torch.Tensor] = []
+    for chunk_batch in tqdm(
+        batched(text_chunks, n=batch_passage),
+        desc="Processing text passages",
+        total=math.ceil(len(text_chunks) / batch_passage),
+    ):
+        batch_emb_passages = vision_retriever.forward_queries(chunk_batch, batch_size=batch_passage)
+        if isinstance(batch_emb_passages, torch.Tensor):
+            batch_emb_passages = list(torch.unbind(batch_emb_passages))
+        text_emb_passages.extend(batch_emb_passages)
 
     # import pdb; pdb.set_trace()
+    # Get separate similarity scores for image and text
+    image_scores = vision_retriever.get_scores(emb_queries, image_emb_passages, batch_size=batch_score)
+    text_scores = vision_retriever.get_scores(emb_queries, text_emb_passages, batch_size=batch_score)
+
+    # Get relevant documents and results separately
+    _, image_results = vision_retriever.get_relevant_docs_results(
+        ds, queries, image_scores
+    )
+
+    # For text results, we need to map chunk results back to original documents
+    relevant_docs, text_results = vision_retriever.get_relevant_docs_results(
+        ds, queries, text_scores, chunk_mapping = chunk_to_doc_mapping
+    )
+
     if document_input == "image":
-        emb_passages = emb_passages
-    elif document_input == "image+text":
-        emb_passages_text = vision_retriever.forward_queries(ds["text_description"], batch_size = batch_passage)
-        if emb_passages[0].shape[0] == 1152: # SigLIPRetriever
-            emb_passages = fuse_passage_tensors(emb_passages, emb_passages_text,fuse_method='average')
-        elif emb_passages[0].shape[1] == 128: # ColPaliRetriever
-            emb_passages = fuse_passage_tensors(emb_passages, emb_passages_text,fuse_method='concat')
+        results = image_results
     elif document_input == "text":
-        emb_passages = vision_retriever.forward_queries(ds["text_description"], batch_size = batch_passage)
-
-    if embedding_pooler is not None:
-        for idx, emb_document in tqdm(enumerate(emb_passages), total=len(emb_passages), desc="Pooling embeddings..."):
-            emb_document, _ = embedding_pooler.pool_embeddings(emb_document)
-            emb_passages[idx] = emb_document
-
-  
-    # Get the similarity scores
-    scores = vision_retriever.get_scores(emb_queries, emb_passages, batch_size=batch_score)
-
-    # Get the relevant passages and results
-    relevant_docs, results = vision_retriever.get_relevant_docs_results(ds, queries, scores)
+        results = text_results
+    elif document_input == "image+text":
+        results = merge_retrieval_results(
+            image_results, 
+            text_results, 
+            merge_strategy='weighted_sum',
+            image_weight=0.5,  # Adjust weights based on your specific use case
+            text_weight=0.5
+        )
 
     if rerank:
-        rerank_results = get_relevant_docs_results(results, ds)
+        rerank_results = get_rerank_docs_results(results, ds)
         metrics = vision_retriever.compute_metrics(relevant_docs, rerank_results)
         metric_origin = vision_retriever.compute_metrics(relevant_docs, results)
         

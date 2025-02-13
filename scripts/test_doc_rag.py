@@ -38,8 +38,6 @@ def main(args):
     size = args.size
     # dataset = load_dataset("vidore/syntheticDocQA_artificial_intelligence_test", split="test")
     dataset = load_dataset(dataset_name, split="test")
-    # if args.document_input == "text":
-    #     print("args.document_input is {}, filter the other chunk type".format(args.document_input))
     dataset = dataset.filter(lambda x: x['chunk_type'] == 'text')
     # check the average number of words  of text in the dataset
     print("average number of words in the dataset", sum([len(x['text_description'].split()) for x in dataset])/len(dataset))
@@ -99,7 +97,7 @@ if __name__ == "__main__":
     parser.add_argument("--document_input", type=str, default="image", choices=["image", "text","image+text"],
                         help="Input type for the document")
    
-    parser.add_argument("--size", type=int, default=1, help="Size of the dataset")
+    parser.add_argument("--size", type=float, default=1, help="Size of the dataset")
     args = parser.parse_args()
 
     print(f"Running evaluation with args: {args}")

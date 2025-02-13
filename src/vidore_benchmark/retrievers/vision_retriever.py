@@ -92,6 +92,7 @@ class VisionRetriever(ABC):
         ds: Dataset,
         queries: List[str],
         scores: torch.Tensor,
+        chunk_mapping: Optional[List[int]] = None,
         **kwargs,
     ) -> Tuple[Dict[str, float], Dict[str, Dict[str, float]]]:
         """
@@ -123,7 +124,12 @@ class VisionRetriever(ABC):
             relevant_docs[query] = {queries2filename[query]: 1}
 
             for docidx, score in enumerate(score_per_query):
-                filename = passages2filename[docidx]
+                # If chunk mapping is provided, use it to map chunks to original documents
+                if chunk_mapping is not None:
+                    original_doc_idx = chunk_mapping[docidx]
+                    filename = passages2filename[original_doc_idx]
+                else:
+                    filename = passages2filename[docidx]
                 score_passage = float(score.item())
 
                 if query in results:
